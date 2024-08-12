@@ -35,7 +35,7 @@ ng serve
 ```
 # Screenshot
 
-![screencapture-localhost-4200-start-2024-08-12-22_20_42](https://github.com/user-attachments/assets/27cbe714-2967-48f1-993a-65f88f3d3fe2)
+![screencapture-localhost-4200-start-2024-08-12-22_20_42](https://github.com/user-attachments/assets/71dd7f0d-91e5-4c12-8571-840aaaf78d2e)
 
 
 
