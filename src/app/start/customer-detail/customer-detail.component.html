@@ -1,0 +1,55 @@
+<!-- Editable customer details form -->
+<div *ngIf="customer" class="customer-details-container">
+  <div class="column column-left">
+    <!-- Avatar preview -->
+    <div class="image-preview">
+      <img
+        [src]="customer.picture"
+        alt="Avatar"
+        style="width: 300px; height: 300px; border-radius: 50%"
+      />
+    </div>
+    <!-- Picture URL input -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Picture URL</mat-label>
+      <input matInput [(ngModel)]="customer.picture" type="text" />
+    </mat-form-field>
+  </div>
+  <div class="column column-right">
+    <!-- First name input -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput [(ngModel)]="customer.firstname" type="text" />
+    </mat-form-field>
+    <!-- Last name input -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="customer.lastname" type="text" />
+    </mat-form-field>
+    <!-- Email input -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="customer.email" type="email" />
+    </mat-form-field>
+    <!-- Birthday input with datepicker -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Birthday</mat-label>
+      <input
+        matInput
+        [(ngModel)]="customer.birthday"
+        [matDatepicker]="picker"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <!-- Save button -->
+    <button mat-raised-button color="primary" (click)="saveCustomer()">
+      Save
+    </button>
+  </div>
+</div>
+
+<!-- Display save message -->
+<div *ngIf="saveMessage" class="save-message">
+  {{ saveMessage }}
+</div>

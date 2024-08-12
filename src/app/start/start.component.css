@@ -1,0 +1,10 @@
+@media (max-width: 750px) {
+    table {
+      display: block;
+      overflow-x: auto;
+    }
+    th, td {
+      display: block;
+    }
+  }
+  

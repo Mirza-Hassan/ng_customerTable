@@ -1,0 +1,109 @@
+<div>
+  <table
+    mat-table
+    [dataSource]="customers"
+    multiTemplateDataRows
+  >
+    <!-- Picture Column -->
+    <ng-container matColumnDef="picture">
+      <th mat-header-cell *matHeaderCellDef>Picture</th>
+      <td mat-cell *matCellDef="let customer">
+        <img
+          [src]="customer.picture"
+          alt="Avatar"
+          style="width: 50px; height: 50px; border-radius: 50%"
+        />
+      </td>
+    </ng-container>
+
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef>First Name</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.firstname }}</td>
+    </ng-container>
+
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Last Name</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.lastname }}</td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-Mail</th>
+      <td mat-cell *matCellDef="let customer">{{ customer.email }}</td>
+    </ng-container>
+
+    <!-- Birthday Column -->
+    <ng-container matColumnDef="birthday">
+      <th mat-header-cell *matHeaderCellDef>Birthday</th>
+      <td mat-cell *matCellDef="let customer">
+        {{ customer.birthday | date : "dd.MM.yyyy" }}
+      </td>
+    </ng-container>
+
+    <!-- Address Column -->
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let customer">
+        {{ customer.adress.streetname }} {{ customer.adress.streetnumber }},
+        {{ customer.adress.city }}, {{ customer.adress.country }}
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let customer">
+        <span (click)="onSelectCustomer(customer)" style="cursor: pointer">
+          <mat-icon>{{
+            selectedCustomer === customer ? "arrow_drop_up" : "arrow_drop_down"
+          }}</mat-icon>
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Row Definition -->
+    <tr
+      mat-header-row
+      *matHeaderRowDef="[
+        'picture',
+        'firstName',
+        'lastName',
+        'email',
+        'birthday',
+        'address',
+        'edit'
+      ]"
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="
+        let row;
+        columns: [
+          'picture',
+          'firstName',
+          'lastName',
+          'email',
+          'birthday',
+          'address',
+          'edit'
+        ]
+      "
+    ></tr>
+
+    <!-- Expanded Content Row -->
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['expandedDetail']"
+    ></tr>
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let row" [attr.colspan]="7">
+        <app-customer-detail
+          *ngIf="selectedCustomer === row"
+          [customer]="row"
+        ></app-customer-detail>
+      </td>
+    </ng-container>
+  </table>
+</div>
