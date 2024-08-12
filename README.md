@@ -1,4 +1,4 @@
-# Customer table
+<img width="541" alt="Screenshot 2024-08-13 at 12 27 50 AM" src="https://github.com/user-attachments/assets/706c46b2-1bcc-4c97-a690-f3f04f021eca"># Customer table
 
 # Description
 Create a new Angular page with a responsive customer table. Rows should expand to show an editing form when a button is clicked.
@@ -15,8 +15,7 @@ Create a new Angular page with a responsive customer table. Rows should expand t
 - Angular, Material-UI
 
 # Folder Structure
-
-<img width="518" alt="Screenshot 2024-08-12 at 10 45 51 PM" src="https://github.com/user-attachments/assets/509f5baf-23bd-42b7-949c-db697dd25591">
+<img width="541" alt="Screenshot 2024-08-13 at 12 27 50 AM" src="https://github.com/user-attachments/assets/78609c5c-0184-4c18-8814-c5d3a20ba104">
 
 # Setup Instructions
 
@@ -29,7 +28,6 @@ git clone https://github.com/Mirza-Hassan/React_Native_GamerApp.git
 npm install
 ```
 3. Start the development server:
-
 ```
 ng serve
 ```
