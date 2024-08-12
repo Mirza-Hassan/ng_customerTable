@@ -1,4 +1,4 @@
-<img width="541" alt="Screenshot 2024-08-13 at 12 27 50 AM" src="https://github.com/user-attachments/assets/706c46b2-1bcc-4c97-a690-f3f04f021eca"># Customer table
+# Customer table
 
 # Description
 Create a new Angular page with a responsive customer table. Rows should expand to show an editing form when a button is clicked.
